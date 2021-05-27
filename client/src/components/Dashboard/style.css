@@ -1,0 +1,166 @@
+.main-container{
+    text-align: center;
+}
+
+.icon-box {
+    padding: 1rem;
+}
+
+.icon-box:hover {
+    opacity: 80%;
+}
+
+.icon-box>h5 {
+    font-weight: bold;
+}
+
+.cardBox > a{
+    color: white;
+    text-decoration: none;
+}
+
+.cardBox {
+    width: 90%;
+    margin: auto;
+}
+
+.dash-icon{
+    font-size: 2.5rem !important;
+    color: white;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.card-body{
+    padding: 6px;
+    padding-top: 10px;
+    border-top:solid white 1px;
+}
+
+.card-body:hover {
+    opacity: 80%;
+}
+
+
+.btn-span{
+    font-size: 1rem;
+}
+
+.dash-button {
+    background-color: #810000;
+    font-weight: bold;
+}
+
+.dash-button:hover {
+    background-color: tomato;
+}
+
+/* first block effect start */
+.card {
+    display: block;
+    border:none;
+    width: 250px;
+    min-height: 150px;
+    margin-bottom: 1rem;
+    position: unset;
+    color:orange;
+    box-sizing: border-box;
+    cursor: pointer;
+    border: 0.08em solid;
+    box-shadow: 10px 10px 10px 1px gray;
+    background-color: rgb(71, 71, 70);
+    transform: translateX(calc(-0.15em * 3 - 0.08em * 2));
+    transition: 0.3s;
+}
+
+.card > a{
+    color: white;
+    text-decoration: none;
+}
+
+.card:hover  {
+    transform: translateX(0.15em);
+    opacity: 80%;
+}
+
+.card::before,
+.card::after
+{
+    content: '';
+    position: absolute;
+    width: inherit;
+    border-left: inherit;
+    z-index: -1;
+}
+
+.card::before {
+    height: 80%;
+    top: 10%;
+    left: calc(-0.15em - 0.08em * 2);
+    filter: brightness(0.8);
+}
+
+.card::after {
+    height: 60%;
+    top: 20%;
+    left: calc(-0.15em * 2 - 0.08em * 3);
+    filter: brightness(0.6);
+}
+
+/* first block effect end */
+
+/*second block effect start */
+.secondBlock  {
+    transform: translateX(calc(-0.15em * 3 - 0.08em * 2));
+    text-transform: capitalize;
+    background-color: #333;
+    justify-content: center;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    border: 0.08em solid;
+    align-items: center;
+    margin-top: 0.5em;
+    transition: 0.3s;
+    cursor: pointer;
+    color:orange;
+    padding:2.7rem;
+}
+
+.secondBlock >h5 {
+    color: white;
+    font-weight: bold;
+}
+
+.secondBlock:hover  {
+    transform: translateX(0.15em);
+}
+
+.secondBlock::before,
+.secondBlock::after
+{
+    content: '';
+    position: absolute;
+    width: inherit;
+    border-left: inherit;
+    z-index: -1;
+}
+
+.secondBlock::before {
+    height: 80%;
+    top: 10%;
+    left: calc(-0.15em - 0.08em * 2);
+    filter: brightness(0.8);
+}
+
+.secondBlock::after {
+    height: 60%;
+    top: 20%;
+    left: calc(-0.15em * 2 - 0.08em * 3);
+    filter: brightness(0.6);
+}
+
+/* effect end */
+
+.main-container>h1 {
+    margin:1rem 0 2rem 0;
+}
