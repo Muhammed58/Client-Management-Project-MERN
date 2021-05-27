@@ -64,7 +64,7 @@ const AppointmentHours = () => {
         
         const setEndTimeHour = parseInt(getHour);
         const setEndTime = onchange.EndTime;
-        const EndTime = Date(setEndTime.setHours(setEndTimeHour));
+        const EndTime = Date(setEndTime.setHours(setEndTimeHour +1));
         const setEndTimeMinutes = new Date(setEndTime.setMinutes(0));
       
         
