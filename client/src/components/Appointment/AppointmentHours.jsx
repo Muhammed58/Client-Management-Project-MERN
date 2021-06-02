@@ -7,33 +7,33 @@ import "./style.css"
 
 const AppointmentHours = () => {
   
-  //Set hours and availability from 0.00 am to 23.00 pm
+  //Set hours and availability for 24 hours
   const [isHour, setHour] = useState([]);
   const times = []
-  const database = [15]
+  const blockHours = [3,5,9,0]
   useEffect(() => {
     setHour(times); 
   }, [])
-    const hours = [...Array(24).keys()]
-    hours.forEach(num => {
-      //check hours if unavailabe in database
-      if(num == database) {
-        const unavailableHours = {
-          time: database + ":00",
-          available:false
-        }
-        times.push(unavailableHours)
-        
-      } else {
-        const allHours= {
-          time: num + ":00",
-          available: true,
-        } 
-        times.push(allHours)
+  const hours = [...Array(24).keys()]
+  
+  hours.forEach(num => {
+  
+    //check hours if unavailabe in blockHours
+    if(blockHours.includes(num)) {
+      const unavailableHours = {
+        time: num + ":00",
+        available: false
       }
-    })
-
-      
+      times.push(unavailableHours)
+    }else {
+      const allHours= {
+        time: num + ":00",
+        available: true,
+      } 
+      times.push(allHours)
+    }
+  
+  })
     //Display dates for 7 days (weekly)
     const numbers = [...Array(7).keys()]
     const dates =[]
@@ -50,23 +50,22 @@ const AppointmentHours = () => {
     const [buttonPopup, setButtonPopup] = useState(false);
     
     useEffect(() => {
-      if(!onchange == "") {        
-        const url = "http://localhost:3000/make-appointment";
-        
+      if(!onchange == "") {
+
         const appHours = onchange.Hour.toString();
         const getHour = appHours.split(":")[0]; 
-   
-
+        
+        //Set start and end hour of appointment 
         const getDate = onchange.StartTime;
-        const appDate = new Date(getDate.setHours(getHour));
+        const appDate = new Date(getDate.setHours(getHour)); //for adding start time clicked on date sent to calendar
         const appDateMinutes = new Date(getDate.setMinutes(0));
-        
-        
+      
         const setEndTimeHour = parseInt(getHour);
         const setEndTime = onchange.EndTime;
-        const EndTime = Date(setEndTime.setHours(setEndTimeHour +1));
+        const EndTime = Date(setEndTime.setHours(setEndTimeHour +1)); //for adding 1 hour to the start time of appointment
         const setEndTimeMinutes = new Date(setEndTime.setMinutes(0));
-      
+        
+        const url = "http://localhost:3000/make-appointment";
         
         if(makeAppointment == true) {
           axios.post(url, onchange)
