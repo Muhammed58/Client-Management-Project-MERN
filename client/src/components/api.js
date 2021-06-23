@@ -27,6 +27,11 @@ export const getClient = (id) => fetch(`http://localhost:3000/edit/${id}`).then(
 export const getAppointment = (id) => fetch(`http://localhost:3000/calender/LoadData`).then(res => res.json())
 
 
+// Get unavailable date and hours from database
+
+export const getUnavailableAppointment = () => fetch('http://localhost:3000/appointment').then(res =>res.json())
+
+
 
 //get foods info from FOOD DATA CENTRAL
 /* const api_key= "jfydyYtSssxWxQzKc91OHN1cnTu0XQbR7vdRHndp"

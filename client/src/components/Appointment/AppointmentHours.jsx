@@ -1,39 +1,49 @@
-import React, { useState, useEffect } from 'react';
-import Moment from "react-moment";
 import axios from "axios";
+import Moment from "react-moment";
+import React, { useState, useEffect } from 'react';
 import "moment-timezone";
-import Popup from "./Popup/Popup";
-import "./style.css"
+import "./style.css";
+/* import Popup from "./Popup/Popup"; */
 
-const AppointmentHours = () => {
-  
-  //Set hours and availability for 24 hours
-  const [isHour, setHour] = useState([]);
-  const times = []
-  const blockHours = [3,5,9,0]
-  useEffect(() => {
-    setHour(times); 
-  }, [])
+const Appointment =  () => {
+ 
+  //************************************************************************** */
   const hours = [...Array(24).keys()]
+  const [unAvailableDate, setunAvailableDate] = useState([])
   
-  hours.forEach(num => {
-  
-    //check hours if unavailabe in blockHours
-    if(blockHours.includes(num)) {
-      const unavailableHours = {
-        time: num + ":00",
-        available: false
-      }
-      times.push(unavailableHours)
-    }else {
-      const allHours= {
-        time: num + ":00",
-        available: true,
-      } 
-      times.push(allHours)
+  useEffect(()=>{
+    axios.get('http://localhost:3000/appointment')
+    .then(data => setunAvailableDate(data.data))
+    .catch(err => console.log(err))
+  },[1])
+
+    //Set hours and availability for 24 hours
+  const handleChange = (date) => {
+      setunAvailableDate([
+        // eslint-disable-next-line 
+          ... unAvailableDate,
+          {
+            Date: date,
+          },
+        ])  
     }
-  
-  })
+  const [saveData, setsaveData] = useState([])
+  //save data to the database(blockapphours) 
+  const handleClick = () => {
+    console.log(saveData);
+    console.log(compaireDate);
+    saveData.map(value => {
+      const valueGetTime = value.Date.getTime()
+    console.log(compaireDate.includes(valueGetTime))
+    console.log(valueGetTime);
+    compaireDate.includes(valueGetTime) ? console.log('found index') : console.log('index not found');
+
+    /* return axios.post('http://localhost:3000/appointment', value)
+            .then(() => console.log("Succesfully blocked the hours" , value))
+            .catch(err => console.log(err))  */
+      })
+    }
+
     //Display dates for 7 days (weekly)
     const numbers = [...Array(7).keys()]
     const dates =[]
@@ -43,89 +53,72 @@ const AppointmentHours = () => {
       date.setDate(date.getDate() + (num + 1  - date.getDay()) % 7) //start from Monday
       dates.push(date)
     })
-    
-    //Send selected Appointment date (include the hour)
-    const [onchange, setChange] = useState();
-    const [makeAppointment, setAppointment] = useState(false);
-    const [buttonPopup, setButtonPopup] = useState(false);
-    
-    useEffect(() => {
-      if(!onchange == "") {
 
-        const appHours = onchange.Hour.toString();
-        const getHour = appHours.split(":")[0]; 
-        
-        //Set start and end hour of appointment 
-        const getDate = onchange.StartTime;
-        const appDate = new Date(getDate.setHours(getHour)); //for adding start time clicked on date sent to calendar
-        const appDateMinutes = new Date(getDate.setMinutes(0));
-      
-        const setEndTimeHour = parseInt(getHour);
-        const setEndTime = onchange.EndTime;
-        const EndTime = Date(setEndTime.setHours(setEndTimeHour +1)); //for adding 1 hour to the start time of appointment
-        const setEndTimeMinutes = new Date(setEndTime.setMinutes(0));
-        
-        const url = "http://localhost:3000/make-appointment";
-        
-        if(makeAppointment == true) {
-          axios.post(url, onchange)
-          .then(() => console.log("Succesfully Completed Appointment at" ,setEndTimeHour, appHours, appDate))
-          .catch(err => console.log(err))
-          setAppointment(false);
-        }
-      }
-    }, [makeAppointment])
+    const compaireHour = unAvailableDate.map(value => new Date(value.Date))
+    const compaireDate = compaireHour.map(value => value.getTime())
+
+    useEffect(() => { 
+      console.log('compaireDate ', compaireDate)
     
+      console.log('unAvailableDate ', unAvailableDate)
+      // eslint-disable-next-line
+    }, [compaireDate])
+
+ 
     return (
     <div className="mainDiv">
-        {dates.map((date, index) =>
+    {dates.map((date, index) =>
       <table className="greenTable" key={index}>
               <thead>
                  {/* change background color if day equal today */}
                   <tr>
-                    {date == Date() ? (
+                    {
+                  // eslint-disable-next-line
+                    date == Date() ? (
                       <th style={{backgroundColor:"brown"}}><Moment format="DD/MM/YYYY dddd">{date}</Moment></th>
                       ):(
                       <th><Moment format="DD/MM/YYYY dddd">{date}</Moment></th>
                     )}
                   </tr>
               </thead>
-              {/* <hr /> */}
+             {/*  <hr /> */}
               <tbody>
-                  {isHour.map((hour,index)=>{
+                  {hours.map((hour,index)=>{
+                    const setDate = new Date(date.setHours(hour,0,0,0))// set hours by using the numbers that under date vertically
                     return  <tr key={index} >
                                   <td>
-                                      <div id="hours">
-                                          {hour.available ? (
-                                            <button className="button" onClick={() => {
-                                              setChange(
-                                                {
-                                                  Subject:"test subject1",
-                                                  StartTime: date, 
-                                                  EndTime: date,
-                                                  Hour: hour.time,
-                                                  Description:"test1 description"
-                                                },
-                                              );
-                                              setButtonPopup(true);
-                                            }
-                                            }>{hour.time}</button>
+                                      <div id="hours" >
+                                          {//check hours if unavailabe in blockHours
+                                            compaireDate.includes(setDate.getTime())? (
+                                              
+                                              <button disabled > Not Available</button>
                                             ):(
-                                              <button className="button" disabled>Not Available</button>
-                                            )}
+                                              <button className="button" onClick={() => {
+                                                  handleChange(setDate);
+                                                  console.log(setDate)
+                                                  setsaveData([
+                                                    ...saveData,
+                                                    {
+                                                    Date: setDate,
+                                                  },
+                                                  ])
+                                               /*  setButtonPopup(true); */
+                                              }}
+                                              >{setDate.getHours()}:00</button>
+                                            )
+                                            }
                                       </div>
-                                  </td>
-                                  
+                                  </td> 
                             </tr>
                   })}
               </tbody>
       </table>
         )}
-      <Popup trigger={buttonPopup} setTrigger={setButtonPopup} setAppointment={setAppointment} >
+        <button className = 'button' type="submit" onClick={() => handleClick()}>Save</button>
+     {/*  <Popup trigger={buttonPopup} setTrigger={setButtonPopup} setAppointment={setAppointment} >
         <p>Do you want to make an appointment at ?</p>
-      </Popup>
+      </Popup> */}
     </div>
     )
 }
-
-export default AppointmentHours;
+export default Appointment;

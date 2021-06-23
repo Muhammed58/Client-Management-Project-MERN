@@ -19,7 +19,7 @@ const Calender = () => {
         <div>
             <ScheduleComponent  
                     id="Schedule"
-                    height="550px" 
+                    height="90vh" 
                     eventSettings={{dataSource: dataManager}}>
                 <ViewsDirective>
                 <ViewDirective option="Day" />

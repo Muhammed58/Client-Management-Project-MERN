@@ -1,4 +1,5 @@
 import React, {useEffect, useState } from 'react';
+// eslint-disable-next-line 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import {getClients, getAppointment} from "../api";
 import "./style.css";
@@ -17,7 +18,7 @@ const Dashboard = () => {
         fetchClients()
         
         //APPOİNTMENTS length
-        const fetchAppointments =async () =>{
+        const fetchAppointments = async () =>{
             const appointiment = await getAppointment()
             setAppoitments(appointiment)
         }

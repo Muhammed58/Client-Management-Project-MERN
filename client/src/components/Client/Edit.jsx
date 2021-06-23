@@ -17,6 +17,7 @@ const Edit = () => {
         setClient(client)
       }
       fetchClient()
+      // eslint-disable-next-line
     }, []);
     
     const onSubmit = async (data) =>{

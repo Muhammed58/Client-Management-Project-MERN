@@ -79,32 +79,32 @@ export const ClientForm = ({client, onSubmit}) => {
             <button type="submit" className="btn btn-primary submit-btn">Submit</button>
                 <div className="sideBySideForm">
                   <div className="form-group">
-                    <label>Adı</label>
-                    <input {...register("fName")} type="text"  className="form-control" name="fName"  placeholder="Adınız"/>
+                    <label>Name</label>
+                    <input {...register("fName")} type="text"  className="form-control" name="fName"  placeholder="Your Name"/>
                   </div>
                   <div className="form-group">
-                    <label>Soyadı</label>
-                    <input {...register("lName")} type="text" className="form-control" name="lName" placeholder="Soyadınız "/>
+                    <label>LastName</label>
+                    <input {...register("lName")} type="text" className="form-control" name="lName" placeholder="Your LastName "/>
                   </div>
                   <div className="form-group"> 
-                    <label htmlFor="example-date-input ">Doğum Tarihi</label>
+                    <label htmlFor="example-date-input ">Date of Birth </label>
                     <input {...register("date")} className="form-control" type="date" name="date" id="example-date-input"/>
                   </div>
                 </div>  
                 <div className="form-group">
-                  <label>Kilo</label>
-                  <input {...register("weight")} type="number" className="form-control" min="40" name="weight" placeholder="Örneğin 65"/>
+                  <label>Weight</label>
+                  <input {...register("weight")} type="number" className="form-control" min="40" name="weight" placeholder="Ex. 60kg"/>
                 </div>
                 <div className="form-group">
-                  <label>Boy</label>
-                  <input {...register("height")} type="number" className="form-control" min="130" name="height" placeholder="Örn. 175"/>
+                  <label>Height</label>
+                  <input {...register("height")} type="number" className="form-control" min="130" name="height" placeholder="Ex. 175cm"/>
                 </div>
                 <div className="form-group">
-                  <label>Cinsiyet</label>
+                  <label>Gender</label>
                   <select {...register("gender")} className="form-select" aria-label="Default select example" name="gender" required>
-                    <option hidden>Cinsiyet seçin</option>
-                    <option>Kadın</option>
-                    <option>Erkek</option>
+                    <option hidden>Choose Gender</option>
+                    <option>Female</option>
+                    <option>Male</option>
                   </select>
                 </div>
                 <div className="form-group">
@@ -112,15 +112,15 @@ export const ClientForm = ({client, onSubmit}) => {
                   <input {...register("email")} type="email" className="form-control" name="email" placeholder="Email adresinizi girin"/>
                 </div>
                 <div className="form-group">
-                  <label>Mesleğiniz</label>
-                  <input {...register("job")} type="text" className="form-control" name="job" placeholder="Mesleğinizi Girin!"/>
+                  <label>Job</label>
+                  <input {...register("job")} type="text" className="form-control" name="job" placeholder="Your Job"/>
                 </div>
                 <div className="form-group">
-                  <label>Adres</label>
-                  <input {...register("city")} type="text" className="form-control" name="city" placeholder="Adresinizi Girin!"/>
+                  <label>Address</label>
+                  <input {...register("city")} type="text" className="form-control" name="city" placeholder="Your address"/>
                 </div>
                 <div className="form-group">
-                  <label>Telefon Numaranız</label>
+                  <label>Phone Number</label>
                   <input {...register("telNumber")} type="number" className="form-control" name="telNumber" placeholder="Telefon Numaranız"/>
                 </div>
                 <div className="form-group">

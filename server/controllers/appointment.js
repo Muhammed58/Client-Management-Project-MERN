@@ -1,5 +1,4 @@
-import Appointment from "../models/appointment.js"
-
+import {Appointment,BlockApphours} from "../models/appointment.js"
 
 export const updateAppointment = (req, res) => {
     
@@ -7,7 +6,6 @@ export const updateAppointment = (req, res) => {
     const dataAdded = req.body.added[0];
     const dataDeleted = req.body.deleted[0];
  
-
     if(req.body.changed.length>0 ) {
         //Update an Appointment
         Appointment.updateOne({_id: dataChanged._id}, dataChanged , (err)=>{
@@ -46,16 +44,12 @@ export const updateAppointment = (req, res) => {
         console.log(err);
     }
 };
-
 //Display appointments from DataBase
 export const loadAppointmentData = (req, res) => {
    Appointment.find()
-        .then(foundAppointment=>res.json(foundAppointment))
+        .then(foundAppointment => res.json(foundAppointment))
 };
-
-
 //Make An Appointment
-
 export const makeApp = (req, res) => {
     const createAppointment = new Appointment ({
         Subject: req.body.Subject,
@@ -66,4 +60,20 @@ export const makeApp = (req, res) => {
     createAppointment.save();
     console.log("succesfully added", createAppointment);
     res.redirect("/calender")
+}
+// get and post block appointment hours
+export const getBlockHours = async (req, res) => {
+   await BlockApphours.find()
+        .then(foundBlockHours => res.json(foundBlockHours))
+};
+export const createBlockHours = async (req, res) => {
+    
+        const createBlocks = new BlockApphours ({
+            Date: req.body.Date,
+            Hour: req.body.Hour
+        });
+        await createBlocks.save();
+
+    console.log("succesfully added the block hours");
+   
 }

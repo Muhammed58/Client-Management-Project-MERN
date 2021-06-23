@@ -1,4 +1,5 @@
 import React, {useEffect, useState } from "react";
+// eslint-disable-next-line 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import {getClients} from "../api";
 import Moment from "react-moment";
@@ -11,7 +12,7 @@ const DisplayClients = () => {
     const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(()=>{
-        const fetchClients =async () =>{
+        const fetchClients = async () =>{
             const persons = await getClients()
             setClients(persons)
         }
@@ -54,8 +55,11 @@ const DisplayClients = () => {
                     </thead>
 
                 {/* filter for search bar and map for displaying data */}
-                {clients.filter((client)=>{
-                    if(searchTerm == "") {
+                
+                {
+                // eslint-disable-next-line
+                clients.filter((client)=>{
+                    if(searchTerm === "") {
                         return client
                     } else if (client.fName.toLowerCase().includes(searchTerm.toLowerCase()) || client.lName.toLowerCase().includes(searchTerm.toLowerCase())) {
                         return client

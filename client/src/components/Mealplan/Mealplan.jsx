@@ -26,6 +26,7 @@ const Mealplan = () => {
             setNutrition(data.foods[2].foodNutrients[0].nutrientName)
             setUnitName(data.foods[0].description)
         })
+    // eslint-disable-next-line 
     },[foodname])   
     
     const handleSubmit = (evt) => {
