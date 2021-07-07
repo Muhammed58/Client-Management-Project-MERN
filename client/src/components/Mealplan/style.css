@@ -1,0 +1,10 @@
+.meal-div {
+    background-color: rgb(255, 121, 121);
+    text-align: left;
+    height: 100vh;
+}
+
+.container-createMealPlan{
+    color: indigo;
+    height: 100vh;
+}

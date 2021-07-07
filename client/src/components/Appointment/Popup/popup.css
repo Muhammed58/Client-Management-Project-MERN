@@ -1,0 +1,41 @@
+.popup {
+    background-color: rgb(153, 255, 255, .4);
+    justify-content: center;
+    align-items: center;
+    padding-left: 85px;
+    position: fixed;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    z-index: 4;
+    left: 0px;
+    top: 0px;
+}
+
+.popup-inner {
+    box-shadow: 0px 0px 10px 1px grey;
+    background-color: burlywood;
+    border-radius: 10px;
+    position: relative;
+    font-weight: bold;
+    max-width: 640px;
+    padding: 32px;
+    width: 100%;
+}
+
+.popup-inner .make-button .cancel-button {
+    position:absolute;
+    border: none;
+    right: 16px;
+    top:16px;
+}
+
+.make-button{
+    margin-right: 45px;
+    height: 50px;
+}
+
+.cancel-button{
+    width: 100px;
+    height: 50px;
+}

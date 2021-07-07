@@ -1,0 +1,295 @@
+body {    
+    margin: 0;
+    width: 100%;
+    background-color: #ffefcf;
+}
+
+.smBodyContainer {
+  width: 100%;
+  margin: 0;
+}
+
+/* Chrome, Safari, Edge, Opera ******************************/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+.btn {
+  color: #ffefcf;
+  font-size: 0.8rem;
+  border: none;
+}
+
+.btn:hover{
+  background-color: #ff7a00;
+  color: white;
+}
+
+.btnSide{
+  padding: 0.5rem 0;
+  width: 100%;
+  float: left;
+}
+
+#btn-createClient{
+  background-color:#810000;
+  width: auto;
+  padding: 10px;
+  font-weight: bold;
+  color:whitesmoke;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+#btn-createClient:hover{
+  opacity: 80%;
+}
+
+.fas{
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+#fa-user{
+  font-size: 1rem;
+}
+
+
+.sideBarLink{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 5rem;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.active, .sideBarLink:hover{
+  background-color: tomato;
+  color: white;
+  padding-top: 5px;
+}
+
+
+.clients {
+  display: flex;
+  justify-content: center;
+  color: #28527a;
+  font-weight: bold;
+}
+
+.thead-dark {
+  background-image: linear-gradient(#36a1a5,rgb(8, 112, 153));
+  color: white;
+}
+
+.topBar-logo{
+  background-image: linear-gradient(to right,rgb(255, 255, 255), rgb(151, 147, 144));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#logo {
+  font-weight: bold;
+}
+
+/* *************************************************** */
+
+.grid-container {
+  grid-template-rows: 2.7rem 90%;
+  grid-template-columns: 100%;
+  display: grid;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Topbar"
+    "Main";
+}
+
+.TopBar {
+  justify-content: space-between;
+  background-color: #4e3d53;
+  padding:0.25rem 1rem;
+  align-items: center;
+  grid-area: Topbar;
+  color: #ffefcf;
+  flex-wrap: wrap;
+  position:fixed;
+  display: flex;
+  width: 100%;
+  z-index: 4;
+}
+
+.TopBar >a {
+  text-decoration: none;
+  color: #ffefcf;
+  cursor: pointer;
+}
+
+.dropdown > a > i {
+  font-size: 1.2rem;
+}
+
+.Main {
+  grid-template-columns: 5.1rem;
+  grid-template-rows: 1fr;
+  display: grid;
+  gap: 0px 0px;
+  grid-template-areas:
+    "SideBar Pages";
+  grid-area: Main;
+}
+
+.SideBar {
+  background-color:#4e3d53;
+  padding: 0px 0px 15px 0px;
+  text-align: center;
+  grid-area: SideBar;
+  overflow: hidden;
+  position: fixed;
+  cursor: pointer;
+  width: 5.2rem;
+  height: 100%;
+  top: 42px;
+  left: 0px;
+}
+
+
+.SideBar> a {
+  color: #f9f3f3;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.SideBar> a:-webkit-any-link {
+  color: #f9f3f3;  
+  cursor: pointer;
+}
+
+.SideBar> a:hover {
+  background-color: tomato;
+}
+
+
+.Pages {
+  grid-area: Pages;
+  background-color: #ffefcf;
+  padding: 10px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 1214px) {
+  .Pages{
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
+.dropdown-box >button {
+  background-color: #363633;
+  border: none;
+  border-radius: 40px;
+}
+
+.dropdown-item >a  {
+  text-decoration: none;
+  color: black;
+}
+
+.spaceHeaders {
+  text-align: center;
+}
+
+
+#flexInputBox{
+  width: 250px;
+  color: green;
+}
+
+
+/* Form start */
+.sideBySideForm{
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+}
+
+@media (max-width: 800px) {
+  .sideBySideForm {
+    flex-direction: column;
+  }
+}
+
+.form-group {
+  margin-top: 10px;  
+}
+
+.form-headers{
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form-control{
+  margin-bottom: 5px;
+}
+
+.submit-btn{
+  margin-top: 15px;
+}
+/* Form end */
+
+.delEditBtn{
+  background-color: #36a1a5;
+  border: none;
+  margin-right: 10px;
+}
+
+#editBtn{
+  font-size: 1rem;
+  margin-right: -4px;
+}
+
+.displayName{
+  font-weight: bold;
+  text-align: left;
+}
+
+
+.table{
+  text-align: center;
+}
+
+.table >tbody >tr:hover {
+  background-color:rgb(3, 130, 139);
+  color:whitesmoke;
+}
+
+.actionButtons{
+  display: flex;
+  justify-content: center;
+}
+
+/**********************************************************/
+
+
+label {
+  font-weight: bold;
+}
+
+
+
+ /* navbar start */
+
+ 
+ /* navbar end */

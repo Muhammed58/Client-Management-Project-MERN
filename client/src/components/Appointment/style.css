@@ -1,0 +1,80 @@
+.container-appointment{
+    color: darkmagenta;
+}
+
+/* MAKE AN APPOİNTMENT START */
+.container-makeAppointment{
+  text-align: center;
+    color: red;
+}
+
+/* START OF THE TABLE*/
+.mainDiv{
+  box-shadow: 0px 0px 5px rgb(136, 136, 136);
+  background-color: white;
+  padding: 10px 0 10px 10px;
+  display: flex;
+}
+table.greenTable {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  margin-right: 1rem;
+  text-align: center;
+  width: 100%;
+}
+table.greenTable td, table.greenTable th {
+  padding: 3px 2px;
+}
+table.greenTable tbody td {
+  font-size: 13px;
+}
+/* table.greenTable thead {
+} */
+table.greenTable thead th {
+  box-shadow: 0 0 5px rgb(136, 136, 136);
+  background: #525458;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: #F0F0F0;
+  font-size: 16px;
+  padding: 10px;
+  width: 1rem;
+}
+
+/* END OF THE TABLE */
+#hours {
+    border: 2px solid rgb(216, 216, 216);
+    justify-content: center;
+    margin-bottom: 0.2rem;
+    align-items: center;
+    border-radius: 5px;
+    display: flex;
+    padding: 4px;
+    margin: auto;
+    width: 6rem;
+}
+
+#hours> h6 {
+    font-weight: bold;
+    margin: 3px;
+}
+
+.button {
+    background-color: white;
+    border-radius: 4px;
+    border-style: none;
+    color:black;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #c22f2f;
+    color: white;
+}
+
+.button:focus {
+    background-color: #c22f2f ;
+    color: white;
+}
+/* MAKE AN APPOİNTMENT END */
