@@ -1,8 +1,8 @@
 
 // get,post and update CLİENT
-export const getClients = () => fetch("http://localhost:3000/clients").then(res => res.json())
+export const getClients = () => fetch("http://localhost:8080/clients").then(res => res.json())
 
-export const createNewClient = (client) => fetch("http://localhost:3000/create", {
+export const createNewClient = (client) => fetch("http://localhost:8080/create", {
     method:"POST",
     headers: {
         "Accept": "application/json",
@@ -11,7 +11,7 @@ export const createNewClient = (client) => fetch("http://localhost:3000/create",
     body: JSON.stringify(client)
 })
 
-export const updateClient = (client, id) => fetch(`http://localhost:3000/edit/${id}`,{
+export const updateClient = (client, id) => fetch(`http://localhost:8080/edit/${id}`,{
     method: "POST",
     headers: {
         "Accept": "application/json",
@@ -20,16 +20,16 @@ export const updateClient = (client, id) => fetch(`http://localhost:3000/edit/${
     body: JSON.stringify(client)
 })
 
-export const getClient = (id) => fetch(`http://localhost:3000/edit/${id}`).then(res => res.json())
+export const getClient = (id) => fetch(`http://localhost:8080/edit/${id}`).then(res => res.json())
 
 
 //Get data from APPOİNTMENTS
-export const getAppointment = (id) => fetch(`http://localhost:3000/calender/LoadData`).then(res => res.json())
+export const getAppointment = (id) => fetch(`http://localhost:8080/calender/LoadData`).then(res => res.json())
 
 
 // Get unavailable date and hours from database
 
-export const getUnavailableAppointment = () => fetch('http://localhost:3000/appointment').then(res =>res.json())
+export const getUnavailableAppointment = () => fetch('http://localhost:8080/appointment').then(res =>res.json())
 
 
 

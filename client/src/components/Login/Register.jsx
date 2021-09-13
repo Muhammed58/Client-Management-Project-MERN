@@ -1,6 +1,6 @@
 import {useForm} from 'react-hook-form';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import "./style.scss";
 import { useHistory } from 'react-router-dom';
 
@@ -8,12 +8,11 @@ const Login = () => {
 
     const {register, handleSubmit, formState: { errors }} = useForm();
     const [foundUser, setfoundUser] = useState(true)
-    const [changePassword, setchangePassword] = useState("")
     const history = useHistory();
 
     //onSubmit Form
     const onSubmit = async(data) => {
-        await axios.post('http://localhost:3000/register', data)
+        await axios.post('http://localhost:8080/register', data)
             .then(res => setfoundUser(res.data))
             .catch(err => console.log(err))
     }
