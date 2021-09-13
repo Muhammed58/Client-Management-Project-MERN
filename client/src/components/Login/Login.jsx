@@ -27,7 +27,7 @@ const Login = () => {
     return (
         <div className="container">
             <div className="login">
-            <h1><a href="http://localhost:3000/" rel="noreferrer" className="flip-animate" target="_blank">Ema<span data-hover="Nutrition">Nutrition</span></a></h1>
+            <h1><a href="http://https://dietatian-management-app.herokuapp.com:8080/" rel="noreferrer" className="flip-animate" target="_blank">Ema<span data-hover="Nutrition">Nutrition</span></a></h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form__group field">
                         <input {...register('email')} type="email" className="form__field" placeholder="email" name="email" id='email' required />
