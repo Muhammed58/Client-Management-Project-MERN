@@ -10,18 +10,23 @@ The aim of the project is to make appointments with the dietitians' consultants,
 <a name="features"></a>
 ## Features
 - Display all functions in home page
+
 ![dashboard](https://user-images.githubusercontent.com/45498530/121350897-2fd78f00-c8f9-11eb-8f54-e19f57d830d9.gif)
 
 - Make an appointment
+
 ![appointment](https://user-images.githubusercontent.com/45498530/121350984-4aaa0380-c8f9-11eb-9a32-d549a2da6eb2.gif)
 
 - Display saved client info
+
 ![client](https://user-images.githubusercontent.com/45498530/121350985-4b429a00-c8f9-11eb-8f8f-34cad76cd08a.gif)
 
 - Follow up on the calendar whether we have an appointment or not
+
 ![calender](https://user-images.githubusercontent.com/45498530/121350987-4b429a00-c8f9-11eb-953f-0a398711be3a.gif)
 
 - Meal Plan By Using usda.gov API For Data
+
 ![meal-plan](https://user-images.githubusercontent.com/45498530/121350989-4bdb3080-c8f9-11eb-9ad7-4a700e228a79.gif)
 
 
