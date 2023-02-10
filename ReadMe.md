@@ -1,38 +1,44 @@
-# REACT-DIET-MANAGER
+# React Admin Dashboard
+The aim of the project is to make appointments with the dietitians' consultants, diet follow-ups, client development analysis.
 
-## DEMO ==> https://dietatian-management-app.herokuapp.com/
+##### Table of Contents  
+[Features](#features)  
+[Getting Started](#getting-started)  
+[Getting Started](#dependencies) 
+[Getting Started](#contributing) 
 
-It's client management project based on dietitians and nutritionist.
-
-* MongoDB (mongoose) was used to store client, appointment info.
-
-* Node.js(Express.js) was used on the server-side.
-
-* React.js was used on the client-side. (Fully functional component hooks and props)
-
-* There is only prepared component was used for the calendar by Syncfusion
-
-* The project was written by using the latest version of Javascript (ES6)
-
+<a name="features"></a>
 ## Features
-
-*  **Admin Dashboard**
-
+- Display all functions in home page
 ![dashboard](https://user-images.githubusercontent.com/45498530/121350897-2fd78f00-c8f9-11eb-8f54-e19f57d830d9.gif)
 
-*  **Appointment**
-
+- Make an appointment
 ![appointment](https://user-images.githubusercontent.com/45498530/121350984-4aaa0380-c8f9-11eb-9a32-d549a2da6eb2.gif)
 
-
-* **Client Info**
-
+- Display saved client info
 ![client](https://user-images.githubusercontent.com/45498530/121350985-4b429a00-c8f9-11eb-8f8f-34cad76cd08a.gif)
 
-* **Calender**
-
+- Follow up on the calendar whether we have an appointment or not
 ![calender](https://user-images.githubusercontent.com/45498530/121350987-4b429a00-c8f9-11eb-953f-0a398711be3a.gif)
 
-* **Meal Plan By Using usda.gov API For Data**
-
+- Meal Plan By Using usda.gov API For Data
 ![meal-plan](https://user-images.githubusercontent.com/45498530/121350989-4bdb3080-c8f9-11eb-9ad7-4a700e228a79.gif)
+
+
+<a name="getting-started"></a>
+## Getting Started
+1. Clone the repository: `https://github.com/Muhammed58/Client-Management-Project-MERN.git`
+2. Install dependencies: `npm install` or `yarn install`
+3. Start the app: `npm start`
+
+<a name="dependencies"></a>
+## Dependencies
+- [@syncfusion/ej2-react-schedule](https://www.npmjs.com/package/@syncfusion/ej2-react-schedule)
+- [@syncfusion/ej2-data](https://www.npmjs.com/package/@syncfusion/ej2-data)
+- [react-hook-form](https://react-hook-form.com/)
+- [moment-timezone](https://momentjs.com/timezone/)
+- [axios](https://www.npmjs.com/package/axios)
+
+<a name="contributing"/>
+## Contributing
+This project is open for contributions! If you have any suggestions or bug reports, feel free to submit a pull request or open an issue.
