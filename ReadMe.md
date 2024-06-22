@@ -1,5 +1,6 @@
-# React Admin Dashboard
-The aim of the project is to make appointments with the dietitians' consultants, diet follow-ups, client development analysis.
+# React Admin Dashboard - An UGLY project from my early coding years😀
+I keep sharing this to show people how bad your code can be in first years 🎉
+The aim of the project is to make appointments with the dietitians' consultants, diet follow-ups, and client development analysis.
 
 ##### Table of Contents  
 [Features](#features)  
@@ -9,7 +10,7 @@ The aim of the project is to make appointments with the dietitians' consultants,
 
 <a name="features"></a>
 ## Features
-- Display all functions in home page
+- Display all functions on home page
 
 ![dashboard](https://user-images.githubusercontent.com/45498530/121350897-2fd78f00-c8f9-11eb-8f54-e19f57d830d9.gif)
 
