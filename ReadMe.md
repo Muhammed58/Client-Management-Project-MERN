@@ -1,6 +1,7 @@
 # React Admin Dashboard - An UGLY project from my early coding years😀
 I keep sharing this to show people how bad your code can be in first years 🎉
-The aim of the project is to make appointments with the dietitians' consultants, diet follow-ups, and client development analysis.
+
+The project aims to make appointments with the dietitians' consultants, conduct diet follow-ups, and conduct client development analysis.
 
 ##### Table of Contents  
 [Features](#features)  
